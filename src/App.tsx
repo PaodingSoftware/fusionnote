@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from './hooks';
+
+import Header from './components/Header';
+import Content from './components/Content';
+import SubmitForm from './components/SubmitForm';
+import NoteList from './components/NoteList';
+import NoteItem from './components/NoteItem';
+import { bindlocalStorageEventListener } from './slices/locationSlice';
 
 function App() {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(bindlocalStorageEventListener)
+  }, [])
+
+  const displayName = useAppSelector((state) => state.location.displayName)
+  const pageIndex = useAppSelector((state) => state.location.pageIndex)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header displayName={displayName} pageIndex={pageIndex}></Header>
+      <Content>
+        <SubmitForm></SubmitForm>
+        <NoteList></NoteList>
+      </Content>
+    </>
   );
 }
 

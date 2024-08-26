@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+  <link rel="stylesheet" href="pure-min.css" />
+  <style type="text/css">
+    body {
+      min-width: 400px;
+      padding: 20px;
+      position: relative;
+      vertical-align: middle;
+    }
+    p {
+      line-height: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <h3>PAODING 浏览器</h3>
+  <hr />
+  <p>
+    朋友你好，本浏览器主要用于技术演示，旨在告诉开发者如何基于前端技术扩展PAODING浏览器。如果你有兴趣的话，可以浏览 <b>%LocalAppData%\Chromium\Application\123.0.6312.106\paoding</b> 目录。
+    <br />
+    除此之外，本浏览器也可以作为一款自带翻译功能的阅读软件来使用。
+    <br />
+    作为一位英文学习困难者，我一直试图通过将英文阅读融入日常工作的方式来提升英文。因此，使用划词翻译而非全文翻译（虽然Google Chrome内置的全文翻译很棒）可以营造更好的英文上下文环境。
+    <br />
+    与此同时，受MarginNote的影响，我现在更习惯于侧边栏的翻译方式（对应MarginNote中的研究窗口）。在这种模式下，翻译窗口不会遮挡网页内容，且不会因为失去焦点而消失。这对我来说，是最佳的阅读体验。如果您在这方面有更多更好的想法，可以在Bilibili上给我留言。
+  </p>
+  <hr />
+  <h6>v1.0.3</h6>
+  <p>
+    之前的版本中，为了解决PDF的划词翻译功能，我通过引入Mozilla的PDF.js插件替换了Chrome原生的PDF Viewer（PDFium）。经过一段时间的使用，我发现PDF.js的效果并不好，经常出现显示错位的问题。为了解决这个问题，我通过修改Chromium内核，捕获了PDFium的鼠标事件并派发到JavaScript World。
+    <br />
+    关于Chromium中PDF Viewer的设计细节可以自行Google关键字“Unseasoned PDF Viewer”，可以找到完整的设计文档。
+  </p>
+</body>
+</html>

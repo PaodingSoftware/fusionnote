@@ -1,0 +1,50 @@
+{
+    "action": {
+       "default_icon": {
+          "128": "/images/translate128.png",
+          "16": "/images/translate16.png",
+          "32": "/images/translate32.png",
+          "48": "/images/translate64.png"
+       },
+       "default_popup": "popup.html"
+    },
+    "background": {
+       "service_worker": "background.js"
+    },
+    "content_scripts": [
+       {
+          "js": [
+             "baidu-script.js"
+          ],
+          "matches": [
+             "https://fanyi.baidu.com/*"
+          ]
+       },
+       {
+          "js": [
+             "selection-script.js"
+          ],
+          "matches": [
+             "\u003Call_urls>"
+          ]
+       }
+    ],
+    "description": "Yes, indeed.",
+    "host_permissions": [
+       "\u003Call_urls>"
+    ],
+    "icons": {
+       "128": "/images/translate128.png",
+       "16": "/images/translate16.png",
+       "32": "/images/translate32.png",
+       "48": "/images/translate64.png"
+    },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5kAP/bBD3vKmO4PeB4jJuJ5uaM2lqL2JeLJCELZk9cHWXzI0mlIDfCOhES9F3JMeGMynV6YRPOXrwPOC4w4Uve0gB7852Op9Z7GgOJO1db7eTQULKPyz42UbRl0tZBgLJsc8qoLVg8miF+OIrDh7BuMWJXQtBghIeAX27WGZeSRKZbiYov4DTUIGEMcQvPWKYJlmlq7ayHXKNJDaY8eSr9t7+CDzOjTsnMebS8YAla1z4ew0qKDNHkfgESuA31AdbLmyst21w26XTc9lOJRPviKE7IEmDlZCkNIo5p7sa+F7SXHA6z2XCpPFMPSrODIrNDV7tOp2VB1+7IINJHTUAQIDAQAB",
+    "manifest_version": 3,
+    "name": "Paoding Head Module",
+    "permissions": [
+       "scripting",
+       "storage"
+    ],
+    "version": "1.0.5"
+ }
