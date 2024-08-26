@@ -31,7 +31,7 @@ function NoteItem({ id, caption, content, content_type, created_at }:
             return;
         }
         const parentPath = path.dirname(filePath);
-        const baseName = path.basename(filePath);
+        const baseName = path.parse(filePath).name;
         const relativePath = new URL(e.target.dataset.url).pathname;
         const resultDirPath = path.join(parentPath, baseName);
         const resultFilePath = path.join(resultDirPath, relativePath);
