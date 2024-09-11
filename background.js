@@ -3,9 +3,16 @@ paoding.addEventListener({
     "is_once_callback": false,
     "event_id": "Startup",
     "handler": function () {
+        paoding.newDockedWindow({
+            "url": "https://fanyi.baidu.com/#auto/zh/",
+            "location": "left",
+            "width": 400,
+            "user_agent_override": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+        });
+
         paoding.newWebWindow({
             "url": chrome.runtime.getURL("index.html"),
-            "title": "联合书签",
+            "title": "联合笔记",
             "width": 500,
             "height": 600,
             "show_title": true,
